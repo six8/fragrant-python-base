@@ -10,7 +10,7 @@ About
 This will create a Vagrant base box for Python development with the following features:
 
 - Ubuntu Precise 32
-- Python 2.7 (via `pythonbrew <https://github.com/utahta/pythonbrew>`_)
+- Python 2.7 (via `pythonbrew <https://github.com/utahta/pythonbrew>`_ in case you want to run multiple Python versions)
 - Mongo 2.x
 - Redis
 - PIL dependancies (so you can ``pip install PIL``)
@@ -28,15 +28,7 @@ Get Started
 
 Follow the installation instructions for VirtualBox and Vagrant on the `Vagrant Getting Started Guide <http://vagrantup.com/v1/docs/getting-started/index.html>`_. Ignore the section "Your First Vagrant Virtual Environment" as you'll use these fragrant scripts to setup your first virtual environment.
 
-Requirements
-~~~~~~~~~~~~
-
-These provision instructions only work for Mac.
-
-Create Vagrant Box
-==================
-
-Now it's time to provision your Vagrant box.
+These provision instructions only work for Mac and possibly Linux.
 
 Prerequisites
 ~~~~~~~~~~~~~
@@ -68,20 +60,19 @@ Package
 Create a vagrant .box::
 
     fab package
-    vagrant box add python27 python27.box
-
+    
 Use Vagrant Box
-===============
+---------------
 
 Add Base Box
--------------
+~~~~~~~~~~~~
 
 Add the base box to your system::
     
     vagrant box add python27 python27.box    
 
 Creating Your VM    
-----------------
+~~~~~~~~~~~~~~~~
 
 Once you have the python27 base box installed, creating a VM is pretty simple. Instructions are for Mac/Linux. You'll need to do similar steps on Windows.
 
@@ -95,7 +86,7 @@ Once you have the python27 base box installed, creating a VM is pretty simple. I
     vagrant init python27
 
 Configure
----------
+~~~~~~~~~
 
 `vagrant init` puts a Vagrantfile in your VM directory. You'll need to edit it for your personal setup.
 
@@ -110,7 +101,7 @@ This will setup the virtual box to run on 192.168.33.13 by default. You need to 
 NOTE: On Windows the hosts file is different, see http://helpdeskgeek.com/windows-7/windows-7-hosts-file/    
 
 Running VM
-----------
+~~~~~~~~~~
 
 Run your Vagrant box and SSH in::
 
