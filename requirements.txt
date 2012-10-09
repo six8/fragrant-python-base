@@ -1,0 +1,3 @@
+Fabric==1.3.2
+clom==0.7.4
+https://github.com/six8/fragrant/zipball/master
